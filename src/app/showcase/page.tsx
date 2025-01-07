@@ -4,9 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { RefObject, useEffect, useId, useRef, useState } from "react";
 
 import { CloseIcon } from "@/app/_components/CloseIcon";
-import { IconArrowLeft } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 
 export default function ShowcasePage() {
@@ -36,7 +34,7 @@ export default function ShowcasePage() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="pt-24 px-4 sm:px-6 lg:px-8">
+    <div className="pt-24 px-4 sm:px-6 lg:px-8 mb-8">
       <div className="max-w-3xl mx-auto mb-8">
         <h1 className="text-4xl font-bold text-center text-white mb-2">
           Showcase
@@ -186,16 +184,6 @@ export default function ShowcasePage() {
           </div>
         </div>
       </ul>
-
-      <div className="max-w-3xl mx-auto mt-4">
-        <Link
-          href="/"
-          className="inline-flex items-center px-4 py-2 text-gray-800 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-white/90 transition-colors"
-        >
-          <IconArrowLeft className="w-5 h-5 mr-2" />
-          Back to Home
-        </Link>
-      </div>
     </div>
   );
 }

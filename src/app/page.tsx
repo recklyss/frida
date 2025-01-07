@@ -2,18 +2,14 @@
 
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
-import { Header } from "@/app/_components/Header";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-      {/* Main Content */}
       <main className="flex-1 pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto my-8">
-          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
               Welcome to My Craft World

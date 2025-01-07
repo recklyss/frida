@@ -1,35 +1,26 @@
-"use client"
+"use client";
 
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
-import { Footer } from "./_components/Footer";
-import { Header } from "./_components/Header";
+import { Header } from "@/app/_components/Header";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div 
-      className="min-h-screen flex flex-col"
-      style={{
-        backgroundImage: 'url("/knitting.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <div>
       <Header />
-
       {/* Main Content */}
       <main className="flex-1 pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto my-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
               Welcome to My Craft World
             </h1>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              Discover unique handmade creations crafted with passion and dedication
+              Discover unique handmade creations crafted with passion and
+              dedication
             </p>
           </div>
 
@@ -45,11 +36,11 @@ export default function Home() {
                       <div className="absolute top-2 left-2 w-full h-full bg-gray-200 rounded-lg transform rotate-6 transition-transform group-hover:rotate-12" />
                       <div className="absolute top-1 left-1 w-full h-full bg-gray-300 rounded-lg transform rotate-3 transition-transform group-hover:rotate-6" />
                       <div className="absolute w-full h-full bg-gray-100 rounded-lg shadow-lg transition-transform group-hover:translate-y-1">
-                        <Image 
-                          src="/handmade-01.jpg" 
-                          alt="Latest Creation" 
+                        <Image
+                          src="/handmade-01.jpg"
+                          alt="Latest Creation"
                           width={100}
-                          height={100}  
+                          height={100}
                           className="w-full h-full object-cover rounded-lg"
                         />
                       </div>
@@ -70,9 +61,9 @@ export default function Home() {
                       <div className="absolute top-2 left-2 w-full h-full bg-gray-200 rounded-lg transform rotate-6 transition-transform group-hover:rotate-12" />
                       <div className="absolute top-1 left-1 w-full h-full bg-gray-300 rounded-lg transform rotate-3 transition-transform group-hover:rotate-6" />
                       <div className="absolute w-full h-full bg-gray-100 rounded-lg shadow-lg transition-transform group-hover:translate-y-1">
-                        <Image 
-                          src="/handmade-02.jpg" 
-                          alt="Workshop Preview" 
+                        <Image
+                          src="/handmade-02.jpg"
+                          alt="Workshop Preview"
                           width={100}
                           height={100}
                           className="w-full h-full object-cover rounded-lg"
@@ -88,8 +79,6 @@ export default function Home() {
           </BentoGrid>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

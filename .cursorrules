@@ -48,4 +48,11 @@ You should use Aceternity UI for the components. You can install Aceternity UI c
 ```
 npx shadcn@latest add https://ui.aceternity.com/registry/[component].json
 ```
+
+Or
+
+```
+pnpm dlx shadcn@latest add https://ui.aceternity.com/registry/[component].json
+```
+
 _Keep the code clean and readable._

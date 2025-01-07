@@ -1,6 +1,6 @@
 "use client"
 
-import { IconMenu2, IconPalette, IconTools, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconPalette, IconTools, IconUser, IconX } from "@tabler/icons-react";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -39,6 +39,13 @@ export const Header = () => {
               <IconTools className="w-5 h-5 mr-1" />
               Workshop
             </Link>
+            <Link 
+              href="/about"
+              className="flex items-center px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors"
+            >
+              <IconUser className="w-5 h-5 mr-1" />
+              About Me
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -71,6 +78,13 @@ export const Header = () => {
               >
                 <IconTools className="w-5 h-5 mr-1" />
                 Workshop
+              </Link>
+              <Link 
+                href="/about"
+                className="flex items-center px-3 py-2 rounded-md text-gray-800 hover:text-gray-600 transition-colors"
+              >
+                <IconUser className="w-5 h-5 mr-1" />
+                About Me
               </Link>
             </div>
           </div>

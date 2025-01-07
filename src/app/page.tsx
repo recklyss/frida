@@ -12,7 +12,7 @@ export default function Home() {
     <div 
       className="min-h-screen flex flex-col"
       style={{
-        backgroundImage: 'url("/frida.jpg")',
+        backgroundImage: 'url("/knitting.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'

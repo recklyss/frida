@@ -15,7 +15,7 @@ export default function WorkshopPage() {
     <div className="pt-24 px-4 sm:px-6 lg:px-8 mb-8">
       <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-lg">
         <h1 className="text-4xl font-bold mb-8 text-center">
-          Workshop Coming Soon!
+          The next workshop is coming soon!
         </h1>
 
         <div className="grid gap-8 md:grid-cols-3 mb-12">

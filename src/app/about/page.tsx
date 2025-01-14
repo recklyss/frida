@@ -21,7 +21,8 @@ export default function AboutPage() {
             <Image src="/frida.jpg" alt="Frida" fill className="object-cover" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold mb-4">About Me</h1>
+            <h1 className="text-4xl font-bold mb-4">About Me</h1> 
+            <span className="text-sm text-gray-500">📍{' '}Singapore</span>
             <div className="text-xl mb-4 flex items-center gap-2">
               I love{" "}
               <FlipWords words={words} className="text-pink-600 font-bold" />
@@ -55,7 +56,7 @@ export default function AboutPage() {
         </div>
         <div className="prose prose-lg max-w-none">
           <p>
-            Welcome to my handmade world! I&apos;m Frida, a passionate crafter
+            Hi 👋 I&apos;m Frida, a passionate crafter
             dedicated to creating unique handmade pieces that bring joy and
             beauty to everyday life.
           </p>
@@ -69,6 +70,12 @@ export default function AboutPage() {
             therapeutic nature of creating something beautiful with my own
             hands. Since then, I&apos;ve been exploring different techniques and
             materials, always striving to bring unique pieces to life.
+          </p>
+          <br/>
+          <p>
+            Also, I&apos;m a kindergarten teacher 👩🏻‍🏫. I love working with kids and
+            helping them explore the world through art. With the skills of crafting, I&apos;m able to teach them more about the world,
+            and let them grow up with creativity and happiness. 💖
           </p>
           <h2 className="text-2xl font-bold mt-8 mb-4">
             My Crafting Philosophy

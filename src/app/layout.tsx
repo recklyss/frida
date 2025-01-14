@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{
-          backgroundImage: 'url("/knitting.jpg")',
+          backgroundImage: 'url("/pineNut.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

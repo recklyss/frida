@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Frida's crafting world 🌸"
+  },
   "navigation": {
     "showcase": "Showcase",
     "workshop": "Workshop",
@@ -35,9 +38,9 @@
     "location": "📍 Singapore",
     "intro": {
       "part1": "Hi 👋 I'm Frida, a passionate crafter dedicated to creating unique handmade pieces that bring joy and beauty to everyday life.",
-      "part2": "With over 5 years of experience in various crafting techniques, I specialize in creating handmade items that combine traditional methods with contemporary designs.",
+      "part2": "With over 5 years of experience in various crafting techniques🧶, I specialize in creating handmade items that combine traditional methods with contemporary designs.",
       "part3": "My journey in the world of crafts began when I discovered the therapeutic nature of creating something beautiful with my own hands. Since then, I've been exploring different techniques and materials, always striving to bring unique pieces to life.",
-      "part4": "Also, I'm a kindergarten teacher 👩🏻‍🏫. I love working with kids and helping them explore the world through art. With the skills of crafting, I'm able to teach them more about the world, and let them grow up with creativity and happiness. 💖"
+      "part4": "Also, I'm a kindergarten teacher 👩🏻‍🏫. I love working with kids and helping them explore the world through art. With the skills of crafting, I'm able to teach them🧒 more about the world, and let them grow up with creativity and happiness. 💖"
     },
     "philosophy": {
       "title": "My Crafting Philosophy",

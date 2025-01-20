@@ -24,7 +24,7 @@ export const Header = () => {
               onClick={() => isMenuOpen && setIsMenuOpen(false)}
               className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors"
             >
-              Frida&apos;s crafting world 🌸
+              {t("header.title")}
             </Link>
           </div>
           

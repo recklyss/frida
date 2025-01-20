@@ -56,10 +56,32 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+  		backgroundImage: {
+  			"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+  			"gradient-conic":
+  				"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+  		},
   	}
   },
-  plugins: [addVariablesForColors, require("tailwindcss-animate")],
+  plugins: [
+    addVariablesForColors,
+    require("tailwindcss-animate"),
+    function ({ addUtilities }: { addUtilities: Function }) {
+      addUtilities({
+        ".scrollbar-hide": {
+          /* IE and Edge */
+          "-ms-overflow-style": "none",
+          /* Firefox */
+          "scrollbar-width": "none",
+          /* Safari and Chrome */
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+      });
+    },
+  ],
 } satisfies Config;
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

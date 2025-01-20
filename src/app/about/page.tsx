@@ -3,15 +3,14 @@
 import { FlipWords } from "@/components/ui/flip-words";
 import { IconBrandInstagram } from "@tabler/icons-react";
 import Image from "next/image";
+import { useTranslation } from "@/i18n/context";
 
 export default function AboutPage() {
-  const words = [
-    "Knitting",
-    "Crocheting",
-    "Embroidery",
-    "Crafting",
-    "Creating",
-  ];
+  const { t, language } = useTranslation();
+
+  const words = language === "en" 
+    ? ["Knitting", "Crocheting", "Embroidery", "Crafting", "Creating"]
+    : ["编织", "钩织", "刺绣", "手工", "创作"];
 
   return (
     <div className="pt-24 px-4 sm:px-6 lg:px-8 mb-8">
@@ -21,10 +20,10 @@ export default function AboutPage() {
             <Image src="/frida.jpg" alt="Frida" fill className="object-cover" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold mb-4">About Me</h1> 
-            <span className="text-sm text-gray-500">📍{' '}Singapore</span>
+            <h1 className="text-4xl font-bold mb-4">{t("about.title")}</h1>
+            <span className="text-sm text-gray-500">{t("about.location")}</span>
             <div className="text-xl mb-4 flex items-center gap-2">
-              I love{" "}
+              {language === "en" ? "I love" : "我热爱"}{" "}
               <FlipWords words={words} className="text-pink-600 font-bold" />
             </div>
             <div className="flex gap-4 mb-4">
@@ -55,36 +54,15 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="prose prose-lg max-w-none">
-          <p>
-            Hi 👋 I&apos;m Frida, a passionate crafter
-            dedicated to creating unique handmade pieces that bring joy and
-            beauty to everyday life.
-          </p>
-          <p>
-            With over 5 years of experience in various crafting techniques, I
-            specialize in creating handmade items that combine traditional
-            methods with contemporary designs.
-          </p>
-          <p>
-            My journey in the world of crafts began when I discovered the
-            therapeutic nature of creating something beautiful with my own
-            hands. Since then, I&apos;ve been exploring different techniques and
-            materials, always striving to bring unique pieces to life.
-          </p>
+          <p>{t("about.intro.part1")}</p>
+          <p>{t("about.intro.part2")}</p>
+          <p>{t("about.intro.part3")}</p>
           <br/>
-          <p>
-            Also, I&apos;m a kindergarten teacher 👩🏻‍🏫. I love working with kids and
-            helping them explore the world through art. With the skills of crafting, I&apos;m able to teach them more about the world,
-            and let them grow up with creativity and happiness. 💖
-          </p>
+          <p>{t("about.intro.part4")}</p>
           <h2 className="text-2xl font-bold mt-8 mb-4">
-            My Crafting Philosophy
+            {t("about.philosophy.title")}
           </h2>
-          <p>
-            I believe that handmade items carry a special energy - they&apos;re
-            not just products, but pieces of art that tell a story. Each item I
-            create is made with attention to detail and love for the craft.
-          </p>
+          <p>{t("about.philosophy.description")}</p>
         </div>
       </div>
     </div>

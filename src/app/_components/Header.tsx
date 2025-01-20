@@ -3,15 +3,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconPalette, IconTools, IconUser, IconX } from "@tabler/icons-react";
 
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import Link from "next/link";
+import { useTranslation } from "@/i18n/context";
 import { useState } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const { t } = useTranslation();
 
   return (
-    <header className="w-full backdrop-blur-sm bg-white/30 fixed top-0 z-50">
+    <header className="w-full backdrop-blur-sm bg-white/30 fixed top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
@@ -26,28 +29,29 @@ export const Header = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <Link 
               href="/showcase"
               className="flex items-center px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors"
             >
               <IconPalette className="w-5 h-5 mr-1" />
-              Showcase
+              {t("navigation.showcase")}
             </Link>
             <Link 
               href="/workshop"
               className="flex items-center px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors"
             >
               <IconTools className="w-5 h-5 mr-1" />
-              Workshop
+              {t("navigation.workshop")}
             </Link>
             <Link 
               href="/about"
               className="flex items-center px-3 py-2 text-gray-800 hover:text-gray-600 transition-colors"
             >
               <IconUser className="w-5 h-5 mr-1" />
-              About Me
+              {t("navigation.about")}
             </Link>
+            <LanguageSwitcher />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -104,7 +108,7 @@ export const Header = () => {
                   className="flex items-center px-3 py-2 rounded-md text-gray-800 hover:text-gray-600 transition-colors"
                 >
                   <IconPalette className="w-5 h-5 mr-1" />
-                  Showcase
+                  {t("navigation.showcase")}
                 </Link>
                 <Link 
                   href="/workshop"
@@ -112,7 +116,7 @@ export const Header = () => {
                   className="flex items-center px-3 py-2 rounded-md text-gray-800 hover:text-gray-600 transition-colors"
                 >
                   <IconTools className="w-5 h-5 mr-1" />
-                  Workshop
+                  {t("navigation.workshop")}
                 </Link>
                 <Link 
                   href="/about"
@@ -120,8 +124,9 @@ export const Header = () => {
                   className="flex items-center px-3 py-2 rounded-md text-gray-800 hover:text-gray-600 transition-colors"
                 >
                   <IconUser className="w-5 h-5 mr-1" />
-                  About Me
+                  {t("navigation.about")}
                 </Link>
+                <LanguageSwitcher isMobile onClick={handleToggleMenu} />
               </motion.div>
             </motion.div>
           )}

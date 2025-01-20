@@ -8,7 +8,6 @@ import {
 } from "@tabler/icons-react";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "@/i18n/context";
 
 export default function WorkshopPage() {

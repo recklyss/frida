@@ -6,7 +6,7 @@ import en from "./locales/en.json";
 import zh from "./locales/zh.json";
 
 type Language = "en" | "zh";
-type Translations = typeof en;
+type TranslationValue = string | { [key: string]: TranslationValue };
 
 interface I18nContextType {
   language: Language;
@@ -16,7 +16,7 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-const translations: Record<Language, Translations> = { en, zh };
+const translations: Record<Language, TranslationValue> = { en, zh };
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en");
@@ -36,13 +36,20 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string): string => {
     const keys = key.split(".");
-    let value: any = translations[language];
+    let value = translations[language] as TranslationValue;
     
     for (const k of keys) {
-      value = value?.[k];
+      if (typeof value === 'object') {
+        value = value[k];
+      }
     }
-    
-    return value || key;
+
+    if (typeof value !== 'string') {
+      console.warn(`Translation key ${key} returned non-string value`);
+      return key;
+    }
+
+    return value;
   };
 
   return (

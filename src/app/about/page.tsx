@@ -10,7 +10,7 @@ export default function AboutPage() {
 
   const words = language === "en" 
     ? ["Knitting", "Crocheting", "Embroidery", "Crafting", "Creating"]
-    : ["编织", "钩织", "刺绣", "手工", "创作"];
+    : ["编织", "钩织", "绘画", "手工"];
 
   return (
     <div className="pt-24 px-4 sm:px-6 lg:px-8 mb-8">

@@ -17,15 +17,15 @@
     "features": {
       "schedule": {
         "title": "工作坊日程",
-        "description": "浏览并预约即将举办的钩针编织活动"
+        "description": "浏览并预约即将举办的手工艺活动"
       },
       "learning": {
         "title": "实践学习",
-        "description": "亲身体验钩针编织技巧，亲手制作独一无二的作品"
+        "description": "亲身体验各种手工艺技巧，创作独一无二的作品"
       },
       "registration": {
         "title": "轻松报名",
-        "description": "轻松报名，无需繁琐的手续，和我一起编织快乐"
+        "description": "简单便捷的报名流程，开启你的手工艺之旅"
       }
     },
     "stayUpdated": {
@@ -46,5 +46,8 @@
       "title": "我的手工哲学",
       "description": "我相信手工制品蕴含着特殊的能量 - 它们不仅仅是产品，更是讲述故事的艺术品。我创作的每一件作品都倾注了细节和热爱，希望它们能给你带来快乐和灵感。"
     }
+  },
+  "footer": {
+    "copyright": "© 2025 Frida的手工艺世界。保留所有权利。"
   }
 } 

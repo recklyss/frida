@@ -1,0 +1,30 @@
+name: Database Migration
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'migrations/**'
+      - '.github/workflows/db-migration.yml'
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    
+    env:
+      SUPABASE_HOST: kgexndrwfrjlsglvsmn.supabase.co
+      SUPABASE_USER: postgres
+      SUPABASE_PASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Flyway Migration
+        uses: docker://flyway/flyway:9.22.3
+        with:
+          args: -configFiles=/github/workspace/flyway.conf migrate
+        env:
+          SUPABASE_HOST: ${{ env.SUPABASE_HOST }}
+          SUPABASE_USER: ${{ env.SUPABASE_USER }}
+          SUPABASE_PASSWORD: ${{ env.SUPABASE_PASSWORD }} 

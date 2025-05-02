@@ -11,11 +11,6 @@ on:
 jobs:
   migrate:
     runs-on: ubuntu-latest
-    
-    env:
-      SUPABASE_HOST: kgexndrwfrjlsglvsmn.supabase.co
-      SUPABASE_USER: postgres
-      SUPABASE_PASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v3
@@ -25,6 +20,6 @@ jobs:
         with:
           args: -configFiles=/github/workspace/flyway.conf migrate
         env:
-          SUPABASE_HOST: ${{ env.SUPABASE_HOST }}
+          SUPABASE_HOST: ${{ env.SUPABASE_DNS }}
           SUPABASE_USER: ${{ env.SUPABASE_USER }}
-          SUPABASE_PASSWORD: ${{ env.SUPABASE_PASSWORD }} 
+          SUPABASE_PASSWORD: ${{ secrets.SUPABASE_PWD }}

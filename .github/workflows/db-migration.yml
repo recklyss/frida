@@ -11,15 +11,23 @@ on:
 jobs:
   migrate:
     runs-on: ubuntu-latest
-
+    env:
+      SUPABASE_HOST: ${{ vars.SUPABASE_DNS }}
+      SUPABASE_USER: ${{ vars.SUPABASE_USER }}
+      SUPABASE_PORT: 6543
+      SUPABASE_PWD : ${{ secrets.SUPABASE_PWD }}
     steps:
-      - uses: actions/checkout@v3
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Echo variables - ${{vars.SUPABASE_DNS}} - ${{env.SUPABASE_USER}}
+        env:
+          HOST: ${{ vars.SUPABASE_DNS }}
+          PWD: ${{ secrets.SUPABASE_PWD }}
+        run: echo ok $HOST - $PWD
 
       - name: Run Flyway Migration
         uses: docker://flyway/flyway:9.22.3
         with:
           args: -configFiles=/github/workspace/flyway.conf migrate
-        env:
-          SUPABASE_HOST: ${{ env.SUPABASE_DNS }}
-          SUPABASE_USER: ${{ env.SUPABASE_USER }}
-          SUPABASE_PASSWORD: ${{ secrets.SUPABASE_PWD }}

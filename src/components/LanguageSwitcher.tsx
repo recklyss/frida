@@ -25,7 +25,7 @@ export const LanguageSwitcher = ({ isMobile = false, onClick }: LanguageSwitcher
       >
         <IconLanguage className="w-5 h-5 mr-1" />
         <span className="text-sm font-medium">
-          {language === "en" ? "切换语言" : "Switch language"}
+          {language === "en" ? "中文" : "English"}
         </span>
       </button>
     );

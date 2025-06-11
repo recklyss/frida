@@ -36,6 +36,14 @@
   "about": {
     "title": "About Me",
     "location": "📍 Singapore",
+    "loveText": "I love",
+    "flipWords": [
+      "Knitting",
+      "Crocheting",
+      "Embroidery",
+      "Crafting",
+      "Creating"
+    ],
     "intro": {
       "part1": "Hi 👋 I'm Frida, a passionate crafter dedicated to creating unique handmade pieces that bring joy and beauty to everyday life.",
       "part2": "With over 5 years of experience in various crafting techniques🧶, I specialize in creating handmade items that combine traditional methods with contemporary designs.",
@@ -50,4 +58,4 @@
   "footer": {
     "copyright": "© 2025 Frida's handmade zone. All rights reserved."
   }
-} 
+}

@@ -6,11 +6,9 @@ import Image from "next/image";
 import { useTranslation } from "@/i18n/context";
 
 export default function AboutPage() {
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
 
-  const words = language === "en" 
-    ? ["Knitting", "Crocheting", "Embroidery", "Crafting", "Creating"]
-    : ["编织", "钩织", "绘画", "手工"];
+  const words = t('about.flipWords');
 
   return (
     <div className="pt-24 px-4 sm:px-6 lg:px-8 mb-8">
@@ -23,8 +21,8 @@ export default function AboutPage() {
             <h1 className="text-4xl font-bold mb-4">{t("about.title")}</h1>
             <span className="text-sm text-gray-500">{t("about.location")}</span>
             <div className="text-xl mb-4 flex items-center gap-2">
-              {language === "en" ? "I love" : "我热爱"}{" "}
-              <FlipWords words={words} className="text-pink-600 font-bold" />
+              {t("about.loveText")}{" "}
+              <FlipWords words={words as string[]} className="text-pink-600 font-bold" />
             </div>
             <div className="flex gap-4 mb-4">
               <a
@@ -57,7 +55,7 @@ export default function AboutPage() {
           <p>{t("about.intro.part1")}</p>
           <p>{t("about.intro.part2")}</p>
           <p>{t("about.intro.part3")}</p>
-          <br/>
+          <br />
           <p>{t("about.intro.part4")}</p>
           <h2 className="text-2xl font-bold mt-8 mb-4">
             {t("about.philosophy.title")}

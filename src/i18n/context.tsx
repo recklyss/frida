@@ -6,12 +6,12 @@ import en from "./locales/en.json";
 import zh from "./locales/zh.json";
 
 type Language = "en" | "zh";
-type TranslationValue = string | { [key: string]: TranslationValue };
+type TranslationValue = string | string[] | { [key: string]: TranslationValue };
 
 interface I18nContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | string[];
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
@@ -34,18 +34,18 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = language;
   }, [language]);
 
-  const t = (key: string): string => {
+  const t = (key: string): string | string[] => {
     const keys = key.split(".");
     let value = translations[language] as TranslationValue;
-    
+
     for (const k of keys) {
-      if (typeof value === 'object') {
+      if (typeof value === 'object' && !Array.isArray(value)) {
         value = value[k];
       }
     }
 
-    if (typeof value !== 'string') {
-      console.warn(`Translation key ${key} returned non-string value`);
+    if (typeof value !== 'string' && !Array.isArray(value)) {
+      console.warn(`Translation key ${key} returned non-string/non-array value`);
       return key;
     }
 
